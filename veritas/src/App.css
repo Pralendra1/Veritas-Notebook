@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Main */
+
+.main {
+  display: flex;
+}
+
+/* Sidebar Css Starts Here */
+
+.sidebar {
+  width: 100px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.logo {
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  margin: 15px 15px 0px 15px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+  border: 0.5px solid rgb(174, 166, 166);
+}
+
+.taskbar {
+  width: 70px;
+  height: 80vh;
+  background-color: white;
+  margin: 15px 15px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+  border: 0.5px solid rgb(174, 166, 166);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.taskButton {
+  font-size: 60px;
+  margin: 5px 0px;
+  color: rgb(147, 127, 127);
+  transition: transform 1s;
+}
+
+.taskButton:hover {
+  transform: scale(1.1); /* Increase the size on hover */
+}
+
+.taskButton:last-child {
+  font-size: 50px;
+  margin-top: auto; /* Push the last button to the bottom */
+}
+
+/* Sidebar Css Ends Here */
+
+/* Home Starts Here */
+
+.home {
+  margin: 15px 20px 27px 10px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+  border: 0.5px solid rgb(174, 166, 166);
+  padding: 10px; /* Add padding to ensure inputs stay inside */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.textTitle {
+  width: calc(100% - 50px); /* Adjusted width to fit within the .home div */
+  height: 30px;
+  margin: 10px 25px; /* Adjusted margin */
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 20px;
+  outline: none;
+  border: 2px solid rgb(147, 127, 127);
+  word-wrap: break-word;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.textDesc {
+  width: calc(100% - 50px); /* Adjusted width to fit within the .home div */
+  height: 85%;
+  margin: 10px 25px 0px 25px; /* Adjusted margin */
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 20px;
+  outline: none;
+  border: 2px solid rgb(147, 127, 127);
+  overflow-wrap: break-word;
+  font-family: "Nunito Sans", sans-serif;
+}
