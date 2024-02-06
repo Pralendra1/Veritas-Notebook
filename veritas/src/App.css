@@ -14,6 +14,7 @@ body {
 /* Sidebar Css Starts Here */
 
 .sidebar {
+  position: fixed;
   width: 100px;
   height: 100vh;
   display: grid;
@@ -27,7 +28,7 @@ body {
   margin: 15px 15px 0px 15px;
   border-radius: 50%;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
-  border: 0.5px solid rgb(174, 166, 166);
+  border: 0.5px solid rgb(166, 164, 157);
 }
 
 .taskbar {
@@ -37,7 +38,7 @@ body {
   margin: 15px 15px;
   border-radius: 10px;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
-  border: 0.5px solid rgb(174, 166, 166);
+  border: 0.5px solid rgb(166, 164, 157);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,8 +47,8 @@ body {
 .taskButton {
   font-size: 60px;
   margin: 5px 0px;
-  color: rgb(147, 127, 127);
-  transition: transform 1s;
+  color: rgb(166, 164, 157);
+  transition: transform 0.2s;
 }
 
 .taskButton:hover {
@@ -68,9 +69,12 @@ body {
   width: 100%;
   border-radius: 20px;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
-  border: 0.5px solid rgb(174, 166, 166);
+  border: 0.5px solid rgb(166, 164, 157);
   padding: 10px; /* Add padding to ensure inputs stay inside */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-left: 100px;
+  flex: 1;
+  min-height: 94vh;
 }
 
 .textTitle {
@@ -81,7 +85,7 @@ body {
   padding: 5px 10px;
   font-size: 20px;
   outline: none;
-  border: 2px solid rgb(147, 127, 127);
+  border: 2px solid rgb(166, 164, 157);
   word-wrap: break-word;
   font-family: "Nunito Sans", sans-serif;
 }
@@ -94,7 +98,63 @@ body {
   padding: 5px 10px;
   font-size: 20px;
   outline: none;
-  border: 2px solid rgb(147, 127, 127);
+  border: 2px solid rgb(166, 164, 157);
   overflow-wrap: break-word;
   font-family: "Nunito Sans", sans-serif;
+}
+
+/* Css for Home ends Here  */
+
+/* Css for AddHomeList starts Here */
+
+.notesListHeading {
+  font-family: "Nunito Sans", sans-serif;
+  margin-left: 20px;
+  text-decoration: underline;
+  color: rgb(166, 164, 157);
+}
+
+.notesContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  border-radius: 25px;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+  border: 0.5px solid rgb(166, 164, 157);
+  font-size: 20px;
+  padding-left: 1rem;
+}
+
+.notesList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px; /* Adjust padding as needed */
+}
+
+.notesTitle {
+  color: rgb(166, 164, 157);
+  flex: 1; /* This will make the title take up the available space */
+}
+
+.notesTime {
+  margin-right: 1rem; /* Adjust margin as needed */
+  color: rgb(166, 164, 157); /* You can apply your desired color */
+}
+
+.notesDelete {
+  cursor: pointer;
+  margin-right: 20px;
+  color: rgb(166, 164, 157);
+}
+
+.notesDelete:hover {
+  color: rgb(166, 164, 157);
+}
+
+.notesDesc {
+  color: rgb(166, 164, 157);
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
