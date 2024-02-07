@@ -64,43 +64,64 @@ body {
 
 /* Home Starts Here */
 
+/* Home.module.css */
+
+/* Home.module.css */
+
 .home {
-  margin: 15px 20px 27px 10px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 20px 27px 110px; /* Adjusted margin to accommodate the sidebar */
+  width: calc(100% - 120px); /* Adjusted width to account for sidebar */
   border-radius: 20px;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
-  border: 0.5px solid rgb(166, 164, 157);
+  border: 0.5px solid rgb(174, 166, 166);
   padding: 10px; /* Add padding to ensure inputs stay inside */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  margin-left: 100px;
-  flex: 1;
-  min-height: 94vh;
+  overflow-y: auto; /* Enable vertical scrolling */
+  flex: 1; /* Allow the home container to grow vertically */
+  min-height: 94vh; /* Ensure a minimum height of 94% of the viewport height */
 }
 
-.textTitle {
-  width: calc(100% - 50px); /* Adjusted width to fit within the .home div */
+.homeForm {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.textTitle,
+.textDesc {
+  width: calc(100% - 90px); /* Adjusted width to fit within the .home div */
   height: 30px;
   margin: 10px 25px; /* Adjusted margin */
   border-radius: 20px;
   padding: 5px 10px;
   font-size: 20px;
   outline: none;
-  border: 2px solid rgb(166, 164, 157);
+  border: 2px solid rgb(147, 127, 127);
   word-wrap: break-word;
   font-family: "Nunito Sans", sans-serif;
 }
 
 .textDesc {
-  width: calc(100% - 50px); /* Adjusted width to fit within the .home div */
   height: 85%;
-  margin: 10px 25px 0px 25px; /* Adjusted margin */
-  border-radius: 20px;
-  padding: 5px 10px;
+}
+
+.submitBtn {
+  align-self: flex-end; /* Align the button to the right end */
+  margin-right: 40px; /* Adjust margin as needed */
+  padding: 10px 20px;
   font-size: 20px;
-  outline: none;
-  border: 2px solid rgb(166, 164, 157);
-  overflow-wrap: break-word;
-  font-family: "Nunito Sans", sans-serif;
+  background-color: rgb(147, 127, 127);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: #8c756f;
 }
 
 /* Css for Home ends Here  */

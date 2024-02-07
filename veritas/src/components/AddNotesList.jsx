@@ -1,31 +1,48 @@
-import { FaDeleteLeft } from "react-icons/fa6";
+import React, { useState, useRef } from "react";
 
-function AddNotesList() {
-  const time = 10;
+function AddNotesList(props) {
+  const titleElement = useRef(null);
+  const descElement = useRef(null);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const noteTitle = titleElement.current.value;
+    const noteBody = descElement.current.value;
+
+    console.log(
+      `The entered title is ${noteTitle} and the description is ${noteBody}`
+    );
+    // Create a new element
+    const newElement = {
+      id: Date.now(), // You can generate the ID as per your requirement
+      title: noteTitle,
+      body: noteBody,
+    };
+    // Call the function passed as prop to add the new element to the list
+    props.addNotesToList(newElement);
+    // Clear the input field after submission
+    titleElement.current.value = "";
+    descElement.current.value = "";
+  };
+
   return (
     <div className="home">
-      <h1 className="notesListHeading">Your Notes</h1>
-      <div className="notesContainer">
-        <div className="notesList">
-          <div className="notesTitle">This is your notes title.</div>
-          <div className="notesTime">{time}</div>
-          <FaDeleteLeft className="notesDelete" />
-        </div>
-        <div className="notesDesc">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quis
-          debitis perferendis deleniti reiciendis illum facilis reprehenderit
-          ipsa, numquam possimus quas obcaecati tenetur earum sed? Nulla beatae
-          provident, explicabo in reiciendis mollitia, commodi dolor esse
-          officia illo at, sapiente eum nostrum consequatur hic praesentium?
-          Repellat perferendis rerum itaque culpa nesciunt, numquam nam saepe ea
-          facere provident, recusandae veniam inventore ipsum harum quisquam
-          quod debitis aliquam labore illum cumque, enim facilis tempora non
-          quos? Veritatis quae, magni ipsa reprehenderit placeat nobis
-          dignissimos iste quia fugit repudiandae repellat dolor nesciunt
-          doloribus necessitatibus nemo dicta voluptates. Perspiciatis tempore
-          praesentium blanditiis, doloremque totam deserunt!
-        </div>
-      </div>
+      <form action="" className="homeForm" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          className="textTitle"
+          placeholder="Construct a Title"
+          ref={titleElement}
+        />
+        <textarea
+          className="textDesc"
+          placeholder="Enter the Description."
+          ref={descElement}
+        ></textarea>
+        <button type="submit" className="submitBtn">
+          Save Note
+        </button>
+      </form>
     </div>
   );
 }
