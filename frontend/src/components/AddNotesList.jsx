@@ -33,13 +33,13 @@ function AddNotesList(props) {
     axios
       .post("http://localhost:3000/notes", {
         title: noteTitle,
-        description: noteDescription
+        description: noteDescription,
       })
-      .then(function(response) {
+      .then(function (response) {
         console.log("Note added successfully");
         //add logic here for updating logic.
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.error("Error adding note:", error);
         // You can handle errors here, such as displaying error messages
       });
@@ -59,11 +59,10 @@ function AddNotesList(props) {
           placeholder="Enter the Description."
           ref={descElement}
         ></textarea>
-        <button type="submit" className="submitBtn">
+        <button type="submit" onClick={handleAddNote} className="submitBtn">
           Save Note
         </button>
       </form>
-      <button onClick={handleAddNote}>Save Note (Using Axios)</button>
     </div>
   );
 }
