@@ -11,6 +11,13 @@ const createnotesSchema = zod.object({
   title: zod.string(),
   description: zod.string(),
 });
+app.use(cors(
+  {
+    origin:["http://veritas.Notebook-A.vercel.app"],
+    methods:["GET","POST"],
+    Credentials:true
+  }
+));
 
 app.post("/notes", async function (req, res) {
   const createpayload = req.body;
